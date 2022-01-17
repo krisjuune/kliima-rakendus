@@ -200,6 +200,7 @@ def select_graph(plot_type,year_range):
 def update_table(year_range):
     df_copy = df.copy()                             # make copy of dataframe
     df_copy = df_copy[df_copy['aasta'].between(year_range[0], year_range[1])]
+    df_copy = df_copy.round({'muu_heide': 2, 'en_protsent': 2, 'muu_protsent': 2})
     data = df_copy.to_dict('records')
     return data
 
